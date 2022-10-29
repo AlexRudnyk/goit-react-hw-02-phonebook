@@ -1,16 +1,18 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import React, { Component } from 'react';
+import ContactForm from './contactForm';
+import { AppTitle, Container } from './App.styled';
+
+class App extends Component {
+  render() {
+    return (
+      <Container>
+        <AppTitle>Phonebook</AppTitle>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <ul></ul>
+      </Container>
+    );
+  }
+}
+
+export default App;
