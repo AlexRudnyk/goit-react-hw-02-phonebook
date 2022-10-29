@@ -5,6 +5,7 @@ import { Form, FormLabel, FormInput, FormBtn } from './ContactForm.styled';
 class ContactForm extends Component {
   state = {
     name: '',
+    number: '',
   };
 
   handleChange = event => {
@@ -16,14 +17,16 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    const { name, number } = this.state;
 
-    this.props.onSubmit(this.state.name);
+    this.props.onSubmit(name, number);
     this.formInputReset();
   };
 
   formInputReset = () => {
     this.setState({
       name: '',
+      number: '',
     });
   };
 
@@ -40,6 +43,16 @@ class ContactForm extends Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
+        <FormLabel>Number</FormLabel>
+        <FormInput
+          type="tel"
+          name="number"
+          onChange={this.handleChange}
+          value={this.state.number}
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+        />{' '}
         <FormBtn type="submit">Add contact</FormBtn>
       </Form>
     );
