@@ -23,4 +23,5 @@ export const FormInput = styled.input`
 export const FormBtn = styled.button`
   width: 100px;
   padding: 5px;
+  cursor: pointer;
 `;

@@ -7,3 +7,7 @@ export const Container = styled.div`
 export const AppTitle = styled.h1`
   margin-bottom: 20px;
 `;
+
+export const ListTitle = styled.h2`
+  margin-bottom: 20px;
+`;
