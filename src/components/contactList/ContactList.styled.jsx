@@ -11,3 +11,7 @@ export const ListItem = styled.li`
     margin-bottom: 5px;
   }
 `;
+
+export const DeleteBtn = styled.button`
+  margin-left: 20px;
+`;
